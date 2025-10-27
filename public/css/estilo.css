@@ -1,0 +1,25 @@
+.boton{
+    background-color: rgb(0, 47, 128);
+    color: whitesmoke;
+    font-size: 25px;
+    border-color: grey 20px outset;
+      border-radius: 10px;
+      position: relative;
+    cursor: pointer;
+    font-family: cursive;
+}
+boton{
+    text-decoration:none;
+    background-color: blue;
+    color: rgb(255, 255, 255);
+    padding: 20px 25px;
+    border-radius: 20px;
+    transition: all;
+    
+}
+button:hover{
+    background-color: blue;
+    box-shadow: black;
+    transform: scale(1.05);  
+    filter: brightness(2.1);
+}
