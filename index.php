@@ -1,61 +1,49 @@
+<?php include "conexion.php"; ?>
+<?php
+$consulta = $conexion->query("SELECT * FROM alumnos ORDER BY id ASC");
+$alumnos = $consulta->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD</title>
+  <meta charset="UTF-8">
+  <title>CRUD Alumnos</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <form class="col-4">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Nombre</label>
-    <input type="text" class="form-control" placeholder="Name">
-  </div>
-   <div class="form-group">
-    <label for="exampleFormControlInput1">Apellidos de la persona</label>
-    <input type="text" class="form-control" placeholder="Apellido">
-  </div>
-    <div class="form-group">
-    <label for="exampleFormControlInput1">Numero de la persona</label>
-    <input type="text" class="form-control" placeholder="TELEFONO">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Correo</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-    <div class="col-8 p-4">
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">NOMBRE</th>
-      <th scope="col">APELLIDOS</th>
-      <th scope="col">NUMERO</th>
-       <th scope="col">CORREO</th>
-       <th scope="col">ACCION</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>3323299878</td>
-      <td>@mdo</td>
+<div class="container">
+  <h1>CRUD de Alumnos</h1>
+  <form action="agregar.php" method="POST" class="form">
+    <input type="text" name="nombre" placeholder="Nombre" required>
+    <input type="text" name="apellido" placeholder="Apellido" required>
+    <input type="text" name="cuatrimestre" placeholder="Cuatrimestre" required>
+    <button type="submit" class="btn">Agregar</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Cuatrimestre</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($alumnos as $a): ?>
+      <tr>
+        <td><?= $a['id'] ?></td>
+        <td><?= $a['nombre'] ?></td>
+        <td><?= $a['apellido'] ?></td>
+        <td><?= $a['cuatrimestre'] ?></td>
         <td>
-        <a href="editar.php?id=1">Editar</a> 
-        <a href="eliminar.php?id=1">Eliminar</a> 
-    </td>
-</tr>
-       </td>  
-
-  </tbody>
-</table>
-  </div>
+          <a href="editar.php?id=<?= $a['id'] ?>" class="btn2">Editar</a>
+          <a href="eliminar.php?id=<?= $a['id'] ?>" class="btn2 eliminar">Eliminar</a>
+        </td>
+      </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+</div>
 </body>
 </html>
-
