@@ -1,0 +1,134 @@
+/* Fondo general */
+body {
+  background: linear-gradient(135deg, #a7f3d0, #6ee7b7);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 30px;
+  color: #064e3b;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: #ffffffee;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border: none;
+  backdrop-filter: blur(8px);
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  color: #065f46;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* Formulario */
+.form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid #34d399;
+  font-size: 1rem;
+  flex: 1;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #10b981;
+  outline: none;
+  box-shadow: 0 0 8px rgba(16,185,129,0.4);
+}
+
+/* Botón principal */
+.btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+  box-shadow: 0 6px 18px rgba(16,185,129,0.4);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(16,185,129,0.6);
+}
+
+/* Botones secundarios */
+.btn2 {
+  padding: 8px 16px;
+  background: #d1fae5;
+  color: #065f46;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+  border: 2px solid #6ee7b7;
+}
+
+.btn2:hover {
+  background: #a7f3d0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Botón eliminar */
+.eliminar {
+  background: #fecaca !important;
+  border-color: #fca5a5 !important;
+  color: #b91c1c !important;
+}
+
+.eliminar:hover {
+  background: #f87171 !important;
+  color: white !important;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+th {
+  background: #10b981;
+  color: white;
+  padding: 14px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Filas alternadas */
+tbody tr:nth-child(even) {
+  background: #f0fdf4;
+}
+
+/* Hover de filas */
+tbody tr:hover {
+  background: #d1fae5 !important;
+  cursor: pointer;
+}
